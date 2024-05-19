@@ -14,10 +14,11 @@ const Login = () => {
   const location = useLocation();
 
   // form function
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/v1/auth/login", {
+      const res = await axios.post("http://localhost:3000/api/v1/auth/login", {
         email,
         password,
       });
