@@ -49,7 +49,7 @@ const CartPage = () => {
   //get payment gateway token
   const getToken = async () => {
     try {
-      const { data } = await axios.get("http:localhost:3000/api/v1/product/braintree/token");
+      const { data } = await axios.get("http://localhost:3000/api/v1/product/braintree/token");
       setClientToken(data?.clientToken);
     } catch (error) {
       console.log(error);
@@ -65,7 +65,7 @@ const CartPage = () => {
       setLoading(true);
       const { nonce } = await instance.requestPaymentMethod();
       // eslint-disable-next-line no-unused-vars
-      const { data } = await axios.post("http:localhost:3000/api/v1/product/braintree/payment", {
+      const { data } = await axios.post("http://localhost:3000/api/v1/product/braintree/payment", {
         nonce,
         cart,
       });
